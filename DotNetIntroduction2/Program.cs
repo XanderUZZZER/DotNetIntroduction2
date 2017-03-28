@@ -123,12 +123,20 @@ namespace DotNetIntroduction2
         {
             Console.WriteLine("Task 6 displays the digits of entered integer number\n");
             Console.WriteLine("Input integer number: ");
-            int number = int.Parse(Console.ReadLine());
-            while (number%10>0)
+            int mumber = int.Parse(Console.ReadLine());
+            int number = mumber;
+            int i = 0;
+            while (number % 10 > 0)
             {
-                Console.WriteLine(number%10+" ");
+                Console.WriteLine(number % 10 + " ");
                 number = number / 10;
+                i++;
             }
+            Console.WriteLine(i);
+            for (int k =i; k >= 1; k--)
+            { Console.WriteLine(mumber / (Math.Pow(10 * k)) + " ");
+            mumber = mumber % (10 * k); }
+            
             Console.WriteLine("\tDone\n--------------------------------------------------------------\n");
         }
         static void Task6dot1()
