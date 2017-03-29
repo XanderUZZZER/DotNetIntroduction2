@@ -132,10 +132,10 @@ namespace DotNetIntroduction2
                 number = number / 10;
                 i++;
             }
-            Console.WriteLine(i);
-            for (int k =i; k >= 1; k--)
-            { Console.WriteLine(mumber / (Math.Pow(10 * k)) + " ");
-            mumber = mumber % (10 * k); }
+            Console.WriteLine("Disgits qty: " + i);
+            //for (int k =i; k >= 1; k--)
+            //{ Console.WriteLine(mumber / (Math.Pow(10 * k)) + " ");
+            //mumber = mumber % (10 * k); }
             
             Console.WriteLine("\tDone\n--------------------------------------------------------------\n");
         }
