@@ -10,11 +10,9 @@ namespace DotNetIntroduction2
     {
         static void Main(string[] args)
         {
-            //6     проблема с выводом наоброт
-            //
             //6.1   не понятно с дробной частью
             //      не понятно с точкой и запятой: System.Globalization.CultureInfo.InvariantCulture
-            //      при вводе запятой, она игнорируется
+            //      при вводе запятой, она игнорируется, дробное число выводится целым...
             string answer = AskForChoice();
             
             while (answer != "q")
@@ -123,20 +121,22 @@ namespace DotNetIntroduction2
         {
             Console.WriteLine("Task 6 displays the digits of entered integer number\n");
             Console.WriteLine("Input integer number: ");
-            int mumber = int.Parse(Console.ReadLine());
-            int number = mumber;
-            int i = 0;
-            while (number % 10 > 0)
-            {
-                Console.WriteLine(number % 10 + " ");
-                number = number / 10;
-                i++;
+            int number = int.Parse(Console.ReadLine());
+            int temp = number;
+            double z = 0.1;
+            //определяем количество цифр
+            while (temp % 10 > 0)
+            {                
+                temp = temp / 10;
+                z *= 10;
             }
-            Console.WriteLine("Disgits qty: " + i);
-            //for (int k =i; k >= 1; k--)
-            //{ Console.WriteLine(mumber / (Math.Pow(10 * k)) + " ");
-            //mumber = mumber % (10 * k); }
-            
+            while ((number / z )>0)
+                {
+                Console.Write(number/(int)z+" ");
+                number = number % (int)z;
+                z /= 10;
+            }
+            Console.WriteLine("\n");
             Console.WriteLine("\tDone\n--------------------------------------------------------------\n");
         }
         static void Task6dot1()
